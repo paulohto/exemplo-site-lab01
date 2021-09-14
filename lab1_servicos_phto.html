@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>LAB1 - AMG CAR SERVICE</title>
+        <link rel="icon" href="icon.png">
+
+        <style>
+            body{
+                background-color: whitesmoke;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                padding: 0px;
+                margin: 0px;
+                position: absolute; 
+            }
+
+            header  {
+                background-color: #1c1d27;
+                padding: 15px;
+                margin: auto;
+            }
+
+            .greybar  {
+                background-color: #e0dede;
+                padding-top: 1px;
+                padding-bottom: 1px;
+            }
+
+            .pgreybar{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: smaller;
+                color: rgb(53, 53, 53);
+                text-align: left; 
+                margin-left: 15%;
+            }
+
+            a {
+                background-color: rgb(60, 179, 163);
+                padding: 15px;
+                color: rgb(255, 255, 255);
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: small;
+                text-align:center;
+                text-decoration: none;
+                display: block;
+                position:relative;
+                float: left;
+                height: auto;
+                width:25%;
+            }
+
+            a:hover{
+                background-color: rgb(40, 116, 105);
+            }
+
+            footer  {
+                background-color: #1c1d27;
+                color: rgb(196, 196, 196);
+                text-align: center;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size:smaller;
+                line-height: 1.5;
+                width: 100%;
+                bottom: 0px;
+                position: relative;
+            }
+
+            p{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: small;
+                color: rgb(53, 53, 53);
+                padding-right: 20px;
+                line-height: 1.5;
+            }
+            h1, h2, h3{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:  #1c1d27;
+                text-align: left;
+            }
+
+            ul, li, ol {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                text-align: left;
+                font-size: small;
+                font-style: italic;
+                color: rgb(53, 53, 53);
+                line-height: 1.5;
+            }
+
+            .box{
+                margin-left: 15%;
+                margin-right: 15%;
+                padding: 2px;
+                justify-content: center; 
+                align-items: center;
+            }
+
+            .wrapper {
+                display: grid;
+                grid-template-columns: 480px 0px;
+            }
+
+            .tableservicos{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                text-align: left;
+                color: rgb(53, 53, 53);
+                line-height: 1.5;
+                font-size: large;
+                border: 1px solid #dddddd;
+                width: 95%;
+            }
+
+            td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <header> <!-- MENU E TOPO -->
+            <table align="center" border="0px" style="width: 70%;"> 
+                <th width="40%" align="left">
+                    <img src="logo.png" width="80%">
+                </th>
+            
+                <th align="center">
+                    
+                    <a href="lab1_home_phto.html" target="_self">HOME</a>
+                    <a href="lab1_servicos_phto.html" target="_self">SERVIÇOS</a>
+                   <a href="lab1_solicitar_phto.html" target="_self">SOLICITAR</a>
+                </th>
+            </table>
+        </header>
+
+<!-- INÍCIO ÁREA DE CONTEÚDO -->
+        <div class="greybar">  
+            <p class="pgreybar">:: Serviços Disponíveis</p>
+        </div>
+
+        <div class="box" >  
+            <h1>Lista de serviços disponíveis</h1>
+            <table class="tableservicos">
+                <tr>
+                  <th style="padding-left: 8px;">Tipo de Serviço</th>
+                  <th style="padding-left: 8px;">Valor R$</th>
+                </tr>
+                <tr>
+                  <td>Troca de óleo</td>
+                  <td>600.00</td>
+                </tr>
+                <tr>
+                  <td>Troca de suspenção</td>
+                  <td>3000.00</td>
+                </tr>
+                <tr>
+                  <td>Balanceamento</td>
+                  <td>800.00</td>
+                </tr>
+                <tr>
+                  <td>Troca de câmbio</td>
+                  <td>600.00</td>
+                </tr>
+                <tr>
+                  <td>Pintura 1Cor</td>
+                  <td>3500.00</td>
+                </tr>
+                <tr>
+                  <td>Pintura 2Cores</td>
+                  <td>7000.00</td>
+                </tr>
+              </table>
+
+              <img src="amg_raiox.jpg" width=800px style="padding-top: 10px; margin-left: 5%; margin-right: 15%;">
+
+        </div>
+
+    
+<!--  FIM ÁREA DE CONTEÚDO   -->
+
+        <footer>
+            <p style="padding: 10px; color: rgb(196, 196, 196);">Aluno: Paulo Henrique Teixeira de Oliveira - 1310178<br>
+            Disciplina: N389-84 Ambiente e Desenvolvimento de Software</p>
+        </footer>
+    </body>
+
+
+</html>
