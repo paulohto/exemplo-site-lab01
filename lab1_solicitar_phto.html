@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>LAB1 - AMG CAR SERVICE</title>
+        <link rel="icon" href="icon.png">
+
+        <style>
+            body{
+                background-color: whitesmoke;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                padding: 0px;
+                margin: 0px;
+                position: absolute; 
+            }
+
+            header  {
+                background-color: #1c1d27;
+                padding: 15px;
+                margin: auto;
+            }
+
+            .greybar  {
+                background-color: #e0dede;
+                padding-top: 1px;
+                padding-bottom: 1px;
+            }
+
+            .pgreybar{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: smaller;
+                color: rgb(53, 53, 53);
+                text-align: left; 
+                margin-left: 15%;
+            }
+
+            a {
+                background-color: rgb(60, 179, 163);
+                padding: 15px;
+                color: rgb(255, 255, 255);
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: small;
+                text-align:center;
+                text-decoration: none;
+                display: block;
+                position:relative;
+                float: left;
+                height: auto;
+                width:25%;
+            }
+
+            a:hover{
+                background-color: rgb(40, 116, 105);
+            }
+
+            footer  {
+                background-color: #1c1d27;
+                color: rgb(196, 196, 196);
+                text-align: center;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size:smaller;
+                line-height: 1.5;
+                width: 100%;
+                bottom: 0px;
+                position: relative;
+            }
+
+            p{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: small;
+                color: rgb(53, 53, 53);
+                padding-right: 20px;
+                line-height: 1.5;
+                
+            }
+            h1, h2, h3{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:  #1c1d27;
+                text-align: left;
+            }
+
+            ul, li, ol {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                text-align: left;
+                font-size: small;
+                font-style: italic;
+                color: rgb(53, 53, 53);
+                line-height: 1.5;
+
+            }
+
+            .box{
+                margin-left: 15%;
+                margin-right: 15%;
+                padding: 2px;
+                justify-content: center; 
+                align-items: center;
+            }
+
+            .wrapper {
+                display: grid;
+                grid-template-columns: 480px 0px;
+
+            }
+            
+            .gridforms{
+                display: grid;
+                grid-template-columns: 33% 33% 33%;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header> <!-- MENU E TOPO -->
+            <table align="center" border="0px" style="width: 70%;"> 
+                <th width="40%" align="left">
+                    <img src="logo.png" width="80%">
+                </th>
+            
+                <th align="center">
+                    
+                    <a href="lab1_home_phto.html" target="_self">HOME</a>
+                    <a href="lab1_servicos_phto.html" target="_self">SERVIÇOS</a>
+                   <a href="lab1_solicitar_phto.html" target="_self">SOLICITAR</a>
+                </th>
+            </table>
+        </header>
+
+<!-- INÍCIO ÁREA DE CONTEÚDO -->
+        <div class="greybar">  
+            <p class="pgreybar">:: Solicitar Serviço</p>
+        </div>
+
+        <div class="box" >  
+            <h1>Formulário de Solicitação</h1>
+            <p style="text-align: left;">Preencha os itens abaixo para cadastro e agendamento de serviço.</p>
+            <hr>
+
+            <h3>1º Cadastrar veículo</h3> 
+                <div class="gridforms"><!--  INICIA AQUI: CADASTRO DE VEÍCULO EM 3 COLUNAS, 3 DIVs-->
+                    <div style="text-align: left;"> 
+
+                        <p>Informe a placa:* <br>
+                        <input id="placa" type="text" size="30%"></p>
+
+                        <p>Informe a marca do carro:* <br>
+                        <input id="marca" size="30%"></p>
+
+                        <p>Informe o modelo do carro:* <br>
+                        <input id="modelo" size="30%"></p>
+                    </div>
+
+                    <div style="text-align: left;">
+                        <p>Informe o ano do carro:* <br>
+                        <input id="ano" size="30%"></p>
+
+                        <p>Informe a cor:* <br>
+                        <input id="cor" size="30%"></p>
+
+                        <p>Informe o tipo de combustível:*
+                        <input list="combustivel" size="30%">
+                        <datalist id="combustivel">
+                            <option value="gasolina">
+                            <option value="álcool">
+                            <option value="flex">
+                            <option value="diesel">
+                            <option value="elétrico">
+                          </datalist></p>
+                    </div>
+
+                    <div style="text-align: left;">
+                        <p>Data do cadastro:* <br>
+                            <input id="dataCadastro" size="30%" type="date"></p>
+
+                        <p>Informações adicionais <br>
+                            <textarea id="adicionais1" cols="40" rows="2" maxlength="200"></textarea></p>
+                        
+                            
+                            <button id="btnCadastraVeiculo" type="button" onclick="fCadastraVeiculo()">Cadastrar Veículo</button>
+                            
+                    </div>
+                    <p id="infoCadV" style="text-align: left;">  </p>
+
+                    <script>
+                        function fCadastraVeiculo(){
+
+                            var placa = document.getElementById("placa").value
+                            var marca = document.getElementById("marca").value
+                            var modelo = document.getElementById("modelo").value
+                            var ano = document.getElementById("ano").value
+                            var cor = document.getElementById("cor").value
+                            var combustivel = document.getElementById("combustivel").value
+                            var dataCadastro = document.getElementById("dataCadastro").value
+
+                            if (placa != "" && marca != "" && modelo != "" && ano != "" && cor != "" && combustivel != "" && dataCadastro != "") {
+                                document.getElementById("infoCadV").style.color = "green";
+                                document.getElementById("infoCadV").innerHTML = "Veículo Cadastrado!"
+                            }
+                            else{
+                                document.getElementById("infoCadV").style.color = "red";
+                                document.getElementById("infoCadV").innerHTML = "*Itens obrigatórios"
+                            }
+                        }
+
+                    </script>
+                </div>
+
+            <hr><h3>2º Cadastrar cliente</h3>
+            <div class="gridforms"><!--  INICIA AQUI: CADASTRO DE CLIENTE EM 3 COLUNAS, 3 DIVs-->
+                <div style="text-align: left;"> 
+
+                    <p>Nome:* <br>
+                    <input id="nome" type="text" size="30%"></p>
+
+                    <p>Sobrenome:* <br>
+                    <input id="sobrenome" size="30%"></p>
+
+                    <p>CPF:* <br>
+                    <input id="cpf" size="30%"></p>
+                </div>
+
+                <div style="text-align: left;">
+                    <p>Data de nascimento:* <br>
+                    <input id="dataNasc" size="30%" type="date"></p>
+
+                    <p>Contato telefônico:* <br>
+                    <input id="contato" size="30%" type="tel"></p>
+
+                    <p>Email:* <br>
+                    <input id="email" size="30%" type="email"></p>
+
+                </div>
+
+                <div style="text-align: left;">
+                    <p>Endereço:* <br>
+                        <textarea id="endereco" cols="40" rows="2" maxlength="200"></textarea></p>
+
+                    <p>Data do cadastro:* <br>
+                        <input id="dataCadCli" size="30%" type="date"></p>
+                       
+                        <button id="btnCadastraCliente" type="button" onclick="fCadastraCliente()">Cadastrar Cliente</button>
+                        
+                </div>
+                <p id="infoCadCli" style="text-align: left;">  </p>
+
+                <script>
+                    function fCadastraCliente(){
+
+                        var nome = document.getElementById("nome").value
+                        var sobrenome = document.getElementById("sobrenome").value
+                        var cpf = document.getElementById("cpf").value
+                        var dataNasc = document.getElementById("dataNasc").value
+                        var contato = document.getElementById("contato").value
+                        var email = document.getElementById("email").value
+                        var endereco = document.getElementById("endereco").value
+                        var dataCadCli = document.getElementById("dataCadCli").value
+
+                        if (nome != "" && sobrenome != "" && cpf != "" && dataNasc != "" && contato != "" && email != "" && endereco != "" && dataCadCli != "") {
+                            document.getElementById("infoCadCli").style.color = "green";
+                            document.getElementById("infoCadCli").innerHTML = "Cliente Cadastrado!"
+                        }
+                        else{
+                            document.getElementById("infoCadCli").style.color = "red";
+                            document.getElementById("infoCadCli").innerHTML = "*Itens obrigatórios"
+                        }
+                    }
+                </script>
+            </div>
+
+            <hr><h3>3º Solicitar serviço</h3>
+            <form id="form_servico" method="POST" action="">
+            <div class="gridforms"><!--  INICIA AQUI: SOLICITAÇÃO DE SERVIÇO EM 3 COLUNAS, 3 DIVs-->
+                <div style="text-align: left;"> 
+
+                    <p style="text-align: left;">Selecione o serviço:* <br>
+                    <input type="checkbox" id="servico1" name="servico1" value="Troca de óleo">
+                    <label for="servico1"> Troca de óleo</label> <br>
+                    
+                    <input type="checkbox" id="servico2" name="servico2" value="Troca de suspenção"> 
+                    <label for="servico2"> Troca de suspenção</label><br>
+
+                    <input type="checkbox" id="servico3" name="servico3" value="Balanceamento">
+                    <label for="servico3"> Balanceamento</label><br>
+
+                    <input type="checkbox" id="servico4" name="servico4" value="Troca de câmbio">
+                    <label for="servico4"> Troca de câmbio</label><br>
+
+                    <input type="checkbox" id="servico5" name="servico5" value="Pintura 1Cor">
+                    <label for="servico5"> Pintura 1 Cor</label><br>
+
+                    <input type="checkbox" id="servico6" name="servico6" value="Outros">
+                    <label for="servico6"> Outros serviços</label><br>
+                    <textarea id="outroServ" cols="35" rows="2" maxlength="200"></textarea>
+                    
+                    </p>
+
+                </div>
+
+                <div style="text-align: left;">
+
+                    <p>Data desejável do serviço:* <br>
+                        <input id="dataServico" size="30%" type="date" ></p>
+
+                    <p>Forma de pagamento:* <br>
+                    <input list="pagamento" size="33%">
+                        <datalist id="pagamento" >
+                            <option value="Cartão de crédito">
+                            <option value="Cartão de débito">
+                            <option value="À vista">
+                            <option value="Pix">
+                            <option value="Transferência">
+                        </datalist></p>
+                    
+                    <p>Informações adicionais: <br>
+                        <textarea id="adicionais2" cols="35" rows="3" maxlength="200"></textarea></p>
+
+                </div>
+
+                <div style="text-align: left;">
+
+                       <button id="btnSolicitaServico" type="button" onclick="fSolicitaServico()">Serviço</button>
+                       <p id="infoSolServ" style="text-align: left;">  </p>
+                        
+                </div>
+            </form>
+
+                <script>
+                    function fSolicitaServico(){
+
+                        var dataServico = document.getElementById("dataServico").value
+                        var pagamento = document.getElementById("pagamento").value
+                        var outroServ = document.getElementById("outroServ").value
+
+                        var servico1 = document.getElementById("servico1").checked
+                        var servico2 = document.getElementById("servico2").checked
+                        var servico3 = document.getElementById("servico3").checked
+                        var servico4 = document.getElementById("servico4").checked
+                        var servico5 = document.getElementById("servico5").checked
+                        var servico6 = document.getElementById("servico6").checked    
+
+                        var form_servico = document.getElementById("form_servico");
+
+                        if (servico1 == true || servico2 == true || servico3 == true || servico4 == true || servico5 == true || servico6 == true){
+                            if (dataServico != "" && pagamento != "") {    
+                                document.getElementById("infoSolServ").style.color = "green";
+                                document.getElementById("infoSolServ").innerHTML = "Solicitação enviada! Retornaremos em até 24h com orçamento e confirmação da data."
+                                document.getElementById("btnSolicitaServico").addEventListener("click", function(){form.submit();})
+                                                           
+                            }
+                        }
+                        else {
+                            document.getElementById("infoSolServ").style.color = "red";
+                            document.getElementById("infoSolServ").innerHTML = "*Itens obrigatórios"
+                        }
+                        
+                    }
+                </script>
+            </div>
+
+        </div>
+ 
+<!--  FIM ÁREA DE CONTEÚDO   -->
+
+        <footer>
+            <p style="padding: 10px; color: rgb(196, 196, 196);">Aluno: Paulo Henrique Teixeira de Oliveira - 1310178<br>
+            Disciplina: N389-84 Ambiente e Desenvolvimento de Software</p>
+        </footer>
+    </body>
+
+
+</html>
